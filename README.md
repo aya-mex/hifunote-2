@@ -1,24 +1,51 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :records
+- has_many :comments
 
-* Configuration
+## records テーブル
 
-* Database creation
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| comment_photo1    | string     |                                |
+| comment_photo2    | string     |                                |
+| comment_photo3    | string     |                                |
+| onset_datetime    | datetime   | null: false                    |
+| symptom_id        | integer    | null: false                    |
+| body_part_id      | integer    | null: false                    |
+| visit_date        | date       |                                |
+| hospital_name     | string     |                                |
+| diagnosis         | string     |                                |
+| cause             | string     |                                |
+| prescription_drug | string     |                                |
+| remission_date    | date       |                                |
+| memo              | text       |                                |
+| user              | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
+## comments テーブル
 
-* Deployment instructions
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | string     | null: false                    |
+| record | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :record
