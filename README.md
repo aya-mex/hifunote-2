@@ -17,12 +17,10 @@
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
-| comment_photo1    | string     |                                |
-| comment_photo2    | string     |                                |
-| comment_photo3    | string     |                                |
-| onset_datetime    | datetime   | null: false                    |
-| symptom_id        | integer    | null: false                    |
-| body_part_id      | integer    | null: false                    |
+| onset_date        | date       | null: false                    |
+| onset_time        | integer    | null: false                    |
+| symptom           | integer    | null: false                    |
+| bodypart          | integer    | null: false                    |
 | visit_date        | date       |                                |
 | hospital_name     | string     |                                |
 | diagnosis         | string     |                                |
