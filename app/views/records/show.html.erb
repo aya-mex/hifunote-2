@@ -1,0 +1,70 @@
+<%# 症状記録の概要 %>
+<div class="record-show">
+  <div class="record-box">
+    <div class="record-img-content">
+      <%= image_tag @record.image, class: "main-image" %><br>
+    </div>
+
+    <% if user_signed_in? && current_user.id == @record.user_id %>
+      <%= link_to "編集", edit_record_path(@record.id), method: :get, class: "record-red-btn" %>
+      <p class="or-text">or</p>
+      <%= link_to "削除", record_path(@record.id), method: :delete, class:"record-destroy" %>
+    <% end %>
+
+    <% if user_signed_in? && current_user.id != @record.user_id %>
+      <%= link_to "保存する", "#" ,class:"record-red-btn"%>
+    <% end %>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-record">投稿者</th>
+          <td class="detail-value"><%= @record.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-record">発症日時</th>
+          <td class="detail-value"><%= @record.onset_date %> / <%= @record.onset_time %>時頃</td>
+        </tr>
+        <tr>
+          <th class="detail-record">発症部位</th>
+          <td class="detail-value"><%= @record.bodypart %></td>
+        </tr>
+        <tr>
+          <th class="detail-record">症状</th>
+          <td class="detail-value"><%= @record.symptom %></td>
+        </tr>
+        <tr>
+          <th class="detail-record">病院へ行った日</th>
+          <td class="detail-value"><%= @record.visit_date %></td>
+        </tr>
+        <% if user_signed_in? && current_user.id == @record.user_id %>
+          <tr>
+            <th class="detail-record">病院名</th>
+            <td class="detail-value"><%= @record.hospital_name %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <th class="detail-record">診断された病名</th>
+          <td class="detail-value"><%= @record.diagnosis %></td>
+        </tr>
+        <tr>
+          <th class="detail-record">診断された原因</th>
+          <td class="detail-value"><%= @record.cause %></td>
+        </tr>
+        <tr>
+          <th class="detail-record">処方された薬</th>
+          <td class="detail-value"><%= @record.prescription_drug %></td>
+        </tr>
+        <tr>
+          <th class="detail-record">寛解日</th>
+          <td class="detail-value"><%= @record.remission_date %></td>
+        </tr>
+        <tr>
+          <th class="detail-record">メモ</th>
+          <td class="detail-value"><%= @record.memo %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%# /症状記録の概要 %>
