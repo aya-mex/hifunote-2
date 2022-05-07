@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2022_05_07_015908) do
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "onset_date", null: false
     t.integer "onset_time", null: false
+    t.integer "symptom_id", null: false
+    t.integer "bodypart_id", null: false
     t.date "visit_date"
     t.string "hospital_name"
     t.string "diagnosis"
