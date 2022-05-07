@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_record, only: [:show, :edit, :update, :destroy]
   
   def index
     @records = Record.includes(:user).order('created_at DESC')
@@ -19,16 +20,13 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])
   end
 
   def edit
-    @record = Record.find(params[:id])
     redirect_to root_path if current_user.id != @record.user_id
   end
 
   def update
-    @record = Record.find(params[:id])
     if @record.update(record_params)
       redirect_to record_path(@record.id)
     else
@@ -36,10 +34,20 @@ class RecordsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user.id == @record.user_id
+      @record.destroy
+      redirect_to root_path
+    end
+  end
 
   private
 
   def record_params
     params.require(:record).permit(:image, :onset_date, :onset_time, :bodypart, :symptom, :visit_date, :hospital_name, :diagnosis, :cause, :prescription_drug, :remission_date, :memo).merge(user_id: current_user.id)
+  end
+
+  def set_record
+    @record = Record.find(params[:id])
   end
 end
