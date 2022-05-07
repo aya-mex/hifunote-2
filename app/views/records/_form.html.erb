@@ -1,0 +1,79 @@
+<%= form_with model: @record, id: 'new_record', local: true do |form| %>
+
+    <%= render 'shared/error_messages', model: form.object %>
+
+      <div class="field">
+        <%= form.label :image, "症状の画像" %><br />
+        <div id="previews"></div>
+        <div class="click-upload">
+          <%= form.file_field :image, name: 'post[images][]', data: {index: 0} %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :onset_date, "発症日" %><br />
+        <%= form.date_field :onset_date %>
+      </div>
+
+      <div class="field">
+        <%= form.label :onset_time, "発症した時刻" %><br />
+        <%= form.number_field :onset_time, in: 0..23 %>時頃
+      </div>
+
+      <div class="field">
+        <%= form.label :body_part, "発症した部位" %><br />
+        <% %w(顔 頭 耳 胸 腹部 背中 腕 手 足 上肢 下肢 脇 その他).each.with_index do |body_part,i| %>
+        <label>
+          <%= form.check_box :body_part, {multiple: true}, body_part, nil %>
+          <%= body_part %>
+        </label>
+        <% end%>
+      </div>
+
+      <div class="field">
+        <%= form.label :symptom, "症状" %><br />
+        <% %w(かゆみ 痛み ぶつぶつ 赤み カサカサ にきび じんましん アトピー イボ タコ・ウオノメ 腫れ 水ぶくれ 虫刺され 水虫 やけど 脱毛 しこり あざ ほくろ その他).each.with_index do |symptom,i| %>
+        <label>
+          <%= form.check_box :symptom, {multiple: true}, symptom, nil %>
+          <%= symptom %>
+        </label>
+        <% end%>
+      </div>
+
+      <div class="field">
+        <%= form.label :visit_date, "病院へ行った日" %><br />
+        <%= form.date_field :visit_date %>
+      </div>
+
+      <div class="field">
+        <%= form.label :hospital_name, "病院名" %><br />
+        <%= form.text_field :hospital_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :diagnosis, "診断された病名" %><br />
+        <%= form.text_field :diagnosis %>
+      </div>
+
+      <div class="field">
+        <%= form.label :cause, "診断された原因" %><br />
+        <%= form.text_field :cause %>
+      </div>
+
+      <div class="field">
+        <%= form.label :prescription_drug, "処方された薬" %><br />
+        <%= form.text_field :prescription_drug %>
+      </div>
+
+      <div class="field">
+        <%= form.label :remission_date, "寛解日" %><br />
+        <%= form.date_field :remission_date %>
+      </div>
+
+      <div class="field">
+        <%= form.label :memo, "メモ" %><br />
+        <%= form.text_area :memo %>
+      </div>
+
+      <%= form.submit "保存する" %>
+<% end %>
