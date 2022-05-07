@@ -1,6 +1,7 @@
 class Record < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+  has_many :comments
 
   validates :image, :onset_date, :bodypart, :symptom, presence: true
   validates :onset_time, presence: true,
