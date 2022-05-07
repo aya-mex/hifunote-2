@@ -1,0 +1,2 @@
+class RecordSymptom < ApplicationRecord
+end
