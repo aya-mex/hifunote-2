@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   
   def index
-    @records = Record.all
+    @records = Record.includes(:user).order('created_at DESC')
   end
 
   def new
