@@ -22,6 +22,21 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
   end
 
+  def edit
+    @record = Record.find(params[:id])
+    redirect_to root_path if current_user.id != @record.user_id
+  end
+
+  def update
+    @record = Record.find(params[:id])
+    if @record.update(record_params)
+      redirect_to record_path(@record.id)
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def record_params
