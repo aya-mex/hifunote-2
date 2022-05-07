@@ -6,7 +6,7 @@
         <%= form.label :image, "症状の画像" %><br />
         <div id="previews"></div>
         <div class="click-upload">
-          <%= form.file_field :image, name: 'post[images][]', data: {index: 0} %>
+          <%= form.file_field :image %>
         </div>
       </div>
 
@@ -21,23 +21,17 @@
       </div>
 
       <div class="field">
-        <%= form.label :body_part, "発症した部位" %><br />
-        <% %w(顔 頭 耳 胸 腹部 背中 腕 手 足 上肢 下肢 脇 その他).each.with_index do |body_part,i| %>
-        <label>
-          <%= form.check_box :body_part, {multiple: true}, body_part, nil %>
-          <%= body_part %>
-        </label>
-        <% end%>
+        <%= form.label :bodyparts, "発症した部位" %><br />
+        <%= collection_check_boxes(:record, :bodypart_ids, Bodypart.all, :id, :bodypart) do |b| %>
+        <%= b.label { b.check_box + b.text } %>
+        <% end %>
       </div>
 
       <div class="field">
-        <%= form.label :symptom, "症状" %><br />
-        <% %w(かゆみ 痛み ぶつぶつ 赤み カサカサ にきび じんましん アトピー イボ タコ・ウオノメ 腫れ 水ぶくれ 虫刺され 水虫 やけど 脱毛 しこり あざ ほくろ その他).each.with_index do |symptom,i| %>
-        <label>
-          <%= form.check_box :symptom, {multiple: true}, symptom, nil %>
-          <%= symptom %>
-        </label>
-        <% end%>
+        <%= form.label :symptoms, "症状" %><br />
+        <%= collection_check_boxes(:record, :symptom_ids, Symptom.all, :id, :symptom) do |b| %>
+        <%= b.label { b.check_box + b.text } %>
+        <% end %>
       </div>
 
       <div class="field">

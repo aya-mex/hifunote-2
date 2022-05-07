@@ -6,5 +6,5 @@ class Record < ApplicationRecord
   has_many :symptoms, through: :record_symptoms
   has_one_attached :image
 
-  validates :image, :onset_date, :onset_time, :bodypart_ids, :symptom_ids, presence: true
+  validates :image, :onset_date, :onset_time, presence: true
 end
