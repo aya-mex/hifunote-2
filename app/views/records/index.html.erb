@@ -9,8 +9,8 @@
               <%= image_tag record.image, class: "record-img" %>
             </div>
             <div class='record-info'>
-              <span><%= record.bodypart.name %></span>
-              <span><%= record.symptom.name %></span>
+              <span><%= record.bodypart %></span>
+              <span><%= record.symptom %></span>
             </div>
             <div>
               <a href="/users/<%= record.user.id %>">

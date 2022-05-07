@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2022_05_07_081157) do
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "onset_date", null: false
     t.integer "onset_time", null: false
-    t.bigint "bodypart_id", null: false
-    t.bigint "symptom_id", null: false
+    t.string "bodypart", null: false
+    t.string "symptom", null: false
     t.date "visit_date"
     t.string "hospital_name"
     t.string "diagnosis"
@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(version: 2022_05_07_081157) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["bodypart_id"], name: "index_records_on_bodypart_id"
-    t.index ["symptom_id"], name: "index_records_on_symptom_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
@@ -79,7 +77,5 @@ ActiveRecord::Schema.define(version: 2022_05_07_081157) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "records", "bodyparts"
-  add_foreign_key "records", "symptoms"
   add_foreign_key "records", "users"
 end

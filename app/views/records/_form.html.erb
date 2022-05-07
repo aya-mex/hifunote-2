@@ -1,6 +1,6 @@
 <%= form_with model: @record, id: 'new_record', local: true do |form| %>
 
-    <%# <%= render 'shared/error_messages', model: form.object %>
+    <%= render 'shared/error_messages', model: form.object %>
 
       <div class="field">
         <%= form.label :image, "症状の画像" %><br />
@@ -21,17 +21,13 @@
       </div>
 
       <div class="field">
-        <%= form.label :bodypart_id, "発症した部位" %><br />
-        <%= collection_check_boxes(:record, :bodypart_id, Bodypart.all, :id, :name) do |b| %>
-        <%= b.label { b.check_box + b.text } %>
-        <% end %>
+        <%= form.label :bodypart, "発症した部位" %><br />
+        <%= form.text_field :bodypart %>
       </div>
 
       <div class="field">
-        <%= form.label :symptom_id, "症状" %><br />
-        <%= collection_check_boxes(:record, :symptom_id, Symptom.all, :id, :name) do |b| %>
-        <%= b.label { b.check_box + b.text } %>
-        <% end %>
+        <%= form.label :symptom, "症状" %><br />
+        <%= form.text_field :symptom %>
       </div>
 
       <div class="field">
