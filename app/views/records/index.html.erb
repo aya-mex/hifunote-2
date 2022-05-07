@@ -1,1 +1,30 @@
 <%= render "shared/header" %>
+<%# 症状記録一覧 %>
+  <div>
+    <ul>
+      <% @records.each do |record| %>
+        <li class='list'>
+          <%= link_to record_path(record.id) do %>
+            <div class='record-img-content'>
+              <%= image_tag record.images[0], class: "record-img" %>
+            </div>
+            <div class='record-info'>
+              <span><%= record.bodypart.name %></span>
+              <span><%= record.symptom.name %></span>
+            </div>
+            <div>
+              <a href="/users/<%= record.user.id %>">
+                <span>by </span><%= record.user.nickname %>
+              </a>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<%# 症状記録一覧 %>
+
+<%= link_to(new_record_path, class: 'record-btn') do %>
+  <span class='record-btn-text'>記録する</span>
+  <%= image_tag 'icon_pencil.png', size: '185x50', class: "record-btn-icon" %>
+<% end %>
