@@ -6,7 +6,7 @@
         <%= form.label :image, "症状の画像" %><br />
         <div id="previews"></div>
         <div class="click-upload">
-          <%= form.file_field :image %>
+          <%= form.file_field :images, name: 'record[images][]', data: {index: 0} %>
         </div>
       </div>
 

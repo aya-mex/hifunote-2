@@ -2,7 +2,14 @@
 <div class="record-show">
   <div class="record-box">
     <div class="record-img-content">
-      <%= image_tag @record.image, class: "main-image" %><br>
+      <%= image_tag @record.images[0], class: "main-image" %><br>
+      <div class="other-images">
+        <% @record.images[1..-1].each do |image| %>
+          <div class="other-image">
+            <%= image_tag image %>
+          </div>
+        <%end%>
+      </div>
     </div>
 
     <% if user_signed_in? && current_user.id == @record.user_id %>
