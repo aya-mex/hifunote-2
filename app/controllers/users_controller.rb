@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @nickname = current_user.nickname
-    @records = current_user.records
+    user = User.find(params[:id])
+    @nickname = user.nickname
+    @records = user.records.order('created_at DESC')
   end
 end
