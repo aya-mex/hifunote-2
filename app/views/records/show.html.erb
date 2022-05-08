@@ -19,7 +19,7 @@
       <tbody>
         <tr>
           <th class="detail-record">投稿者</th>
-          <td class="detail-value"><%= @record.user.nickname %></td>
+          <td class="detail-value"><a href="/users/<%= @record.user.id %>"><%= @record.user.nickname %></a></td>
         </tr>
         <tr>
           <th class="detail-record">発症日時</th>
