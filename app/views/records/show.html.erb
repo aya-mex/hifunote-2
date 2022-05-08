@@ -4,7 +4,7 @@
     <div class="record-img-content">
       <%= image_tag @record.images[0], class: "main-image" %><br>
       <div class="other-images">
-        <% @post.images[1..-1].each do |image| %>
+        <% @record.images[1..-1].each do |image| %>
           <div class="other-image">
             <%= image_tag image %>
           </div>
