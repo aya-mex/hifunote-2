@@ -1,0 +1,9 @@
+<div class="card">
+  <%= image_tag record.images[0], class: :card__img %>
+  <div class="card__body">
+    <p class="card__summary">
+      <%= record.bodypart %>
+    </p>
+    <%= link_to "by #{record.user.nickname}", user_path(record.user_id), class: :card__user %>
+  </div>
+</div>

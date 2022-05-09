@@ -4,7 +4,7 @@
     <li class='list'>
       <%= link_to record_path(record.id) do %>
         <div class='record-img-content'>
-          <%= image_tag record.image, class: "record-img" %>
+          <%= image_tag record.images[0], class: "record-img" %>
         </div>
         <div class='record-info'>
           <span><%= record.bodypart %></span>
