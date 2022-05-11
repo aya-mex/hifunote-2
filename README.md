@@ -1,49 +1,61 @@
-# テーブル設計
+# アプリケーション名
 
-## users テーブル
+HifuNote
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
+# アプリケーション概要
 
-### Association
+- 皮膚症状を写真付きで記録して管理することで、
 
-- has_many :records
-- has_many :comments
+# URL
 
-## records テーブル
+https://hifunote-2.herokuapp.com/
 
-| Column            | Type       | Options                        |
-| ----------------- | ---------- | ------------------------------ |
-| onset_date        | date       | null: false                    |
-| onset_time        | integer    | null: false                    |
-| symptom           | integer    | null: false                    |
-| bodypart          | integer    | null: false                    |
-| visit_date        | date       |                                |
-| hospital_name     | string     |                                |
-| diagnosis         | string     |                                |
-| cause             | string     |                                |
-| prescription_drug | string     |                                |
-| remission_date    | date       |                                |
-| memo              | text       |                                |
-| user              | references | null: false, foreign_key: true |
+# テスト用アカウント
 
-### Association
+- Basic認証パスワード：2222
+- Basic認証ID：admin
+- メールアドレス：test1@test.com
+- パスワード：test1111
 
-- belongs_to :user
-- has_many :comments
+# 利用方法
 
-## comments テーブル
+### 症状記録
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| text   | string     | null: false                    |
-| record | references | null: false, foreign_key: true |
-| user   | references | null: false, foreign_key: true |
+1. 
 
-### Association
+# アプリケーションを作成した背景
 
-- belongs_to :user
-- belongs_to :record
+以前、広告代理店で営業をしていた時に、クライアントである製薬メーカーに、
+
+# 洗い出した要件
+
+# 実装した機能についての画像やGIFおよびその説明
+
+# 実装予定の機能
+
+# データベース設計
+
+# 画面遷移図
+
+# 開発環境
+
+- フロントエンド
+- バックエンド
+- インフラ
+- テスト
+- テキストエディタ
+- タスク管理
+
+# ローカルでの動作方法
+
+以下のコマンドを順に実行。
+% git clone https://github.com/aya-mex/hifunote-2.git
+% cd hifunote-2
+% bundle install
+% yarn install
+
+# 工夫したポイント
+
+
+
+
