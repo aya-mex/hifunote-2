@@ -35,7 +35,6 @@ a {
 }
 
 /* ヘッダー */
-
 .header {
   background-color: #FFF0F5;
   margin-bottom: 40px;
@@ -77,6 +76,31 @@ a {
   background: #8E8888
 }
 
+/* 記録するボタン */
+.record-btn {
+  width: 120px;
+  background: #FEEEED;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.record-btn-text {
+  color: #8E8888;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.record-btn-icon {
+  width: 60%;
+  height: auto;
+}
+
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
@@ -101,8 +125,8 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: #8E8888;
+  border: 1px #8E8888 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -157,27 +181,27 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
+.record__wrapper{
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
+.record__hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.prototype__user{
+.record__user{
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
+.record__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.record__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -187,12 +211,12 @@ a {
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+.record__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn{
+.record__btn{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
@@ -204,12 +228,12 @@ a {
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.prototype__btn:hover{
+.record__btn:hover{
   color: #fff;
   background: #999;
 }
 
-.prototype__comments{
+.record__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
@@ -222,6 +246,10 @@ a {
 .comments_list{
   list-style-type: square;
   padding-bottom: 5px;
+}
+
+.comment_content{
+  width: 600px;
 }
 
 .comment_user{

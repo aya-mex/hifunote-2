@@ -6,64 +6,64 @@
         <%= form.label :image, "症状の画像" %><br />
         <div id="previews"></div>
         <div class="click-upload">
-          <%= form.file_field :images, name: 'record[images][]', data: {index: 0} %>
+          <%= form.file_field :images, name: 'record[images][]', data: {index: 0}, id:"record_image" %>
         </div>
       </div>
 
       <div class="field">
         <%= form.label :onset_date, "発症日" %><br />
-        <%= form.date_field :onset_date %>
+        <%= form.date_field :onset_date, id:"record_onset_date" %>
       </div>
 
       <div class="field">
         <%= form.label :onset_time, "発症した時刻" %><br />
-        <%= form.number_field :onset_time, in: 0..23 %>時頃
+        <%= form.number_field :onset_time, in: 0..23, id:"record_onset_time" %>時頃
       </div>
 
       <div class="field">
         <%= form.label :bodypart, "発症した部位" %><br />
-        <%= form.text_field :bodypart %>
+        <%= form.text_field :bodypart, id:"record_bodypart" %>
       </div>
 
       <div class="field">
         <%= form.label :symptom, "症状" %><br />
-        <%= form.text_field :symptom %>
+        <%= form.text_field :symptom, id:"record_symptom" %>
       </div>
 
       <div class="field">
         <%= form.label :visit_date, "病院へ行った日" %><br />
-        <%= form.date_field :visit_date %>
+        <%= form.date_field :visit_date, id:"record_visit_date" %>
       </div>
 
       <div class="field">
         <%= form.label :hospital_name, "病院名" %><br />
-        <%= form.text_field :hospital_name %>
+        <%= form.text_field :hospital_name, id:"record_hospital_name" %>
       </div>
 
       <div class="field">
         <%= form.label :diagnosis, "診断された病名" %><br />
-        <%= form.text_field :diagnosis %>
+        <%= form.text_field :diagnosis, id:"record_diagnosis" %>
       </div>
 
       <div class="field">
         <%= form.label :cause, "診断された原因" %><br />
-        <%= form.text_field :cause %>
+        <%= form.text_field :cause, id:"record_cause" %>
       </div>
 
       <div class="field">
         <%= form.label :prescription_drug, "処方された薬" %><br />
-        <%= form.text_field :prescription_drug %>
+        <%= form.text_field :prescription_drug, id:"record_prescription_drug" %>
       </div>
 
       <div class="field">
         <%= form.label :remission_date, "寛解日" %><br />
-        <%= form.date_field :remission_date %>
+        <%= form.date_field :remission_date, id:"record_remission_date" %>
       </div>
 
       <div class="field">
         <%= form.label :memo, "メモ" %><br />
-        <%= form.text_area :memo %>
+        <%= form.text_area :memo, class: :form__text, id:"record_memo" %>
       </div>
 
-      <%= form.submit "保存する" %>
+      <%= form.submit "保存する", class: :form__btn %>
 <% end %>
