@@ -17,7 +17,7 @@ div {
 
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;;
-  background-color: #FFFFFC;
+  background-color: #F7F7F3;
   color: #686565;
 }
 
@@ -37,7 +37,7 @@ a {
 
 /* ヘッダー */
 .header {
-  background-color: #FFF0F5;
+  background-color: #FEEEED;
   margin-bottom: 40px;
   padding: 10px 0;
 
@@ -82,11 +82,13 @@ a {
   width: 120px;
   background: #FEEEED;
   text-align: center;
+  border: #8E8888 solid;
   border-radius: 4%;
   bottom: 32px;
   right: 32px;
   position: fixed;
   padding: 15px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
 .record-btn-text {
@@ -153,15 +155,16 @@ a {
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
 .card {
-  width: calc((100% - 50px) / 3);
+  width: calc((100% - 500px) / 3);
   margin-bottom: 40px;
 }
 .card__img {
+  width: 800px;
   margin-bottom: 16px;
 }
 .card__title {
@@ -172,9 +175,11 @@ a {
 }
 .card__summary {
   font-size: 16px;
+  text-align: center;
 }
 .card__user {
   display: block;
+  margin-right: 10px;
   font-size: 12px;
   color: #999;
   text-align: right;
@@ -183,7 +188,7 @@ a {
 
 /* HifuNoteとは */
 .feature-contents {
-  padding: 5vh 15vw;
+  padding: 5vh 10vh 5vw;
 }
 
 .feature-contents>.title {
@@ -212,7 +217,7 @@ a {
 }
 
 .feature-lists>.list {
-  width: 33vh;
+  width: 35vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,6 +233,45 @@ a {
   font-size: 18px;
   margin-top: 20px;
 }
+
+/* スマホアプリリンク*/
+.ad-contents {
+  width: 100vw;
+  background-color: #FEEEED;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 50px 0px;
+  padding: 5vh 15vw;
+  color: #8E8888;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.ad-title {
+  font-size: 5vh;
+  margin-bottom: 2vh;
+}
+
+.ad-explain {
+  font-size: 2.5vh;
+  line-height: 30px;
+}
+
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
+}
+
 
 /* 詳細ページ */
 .record__wrapper{

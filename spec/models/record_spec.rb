@@ -18,29 +18,29 @@ RSpec.describe Record, type: :model do
         expect(@record.errors.full_messages).to include("Image can't be blank")
       end
       it 'onset_dateが空では登録できない' do
-        @record.onset_date = ""
+        @record.onset_date = ''
         @record.valid?
         expect(@record.errors.full_messages).to include("Onset date can't be blank")
       end
       it 'onset_timeが空では登録できない' do
-        @record.onset_time = ""
+        @record.onset_time = ''
         @record.valid?
         expect(@record.errors.full_messages).to include("Onset time can't be blank")
       end
       it 'bodypartが空では登録できない' do
-        @record.bodypart = ""
+        @record.bodypart = ''
         @record.valid?
         expect(@record.errors.full_messages).to include("Bodypart can't be blank")
       end
       it 'symptomが空では登録できない' do
-        @record.symptom = ""
+        @record.symptom = ''
         @record.valid?
         expect(@record.errors.full_messages).to include("Symptom can't be blank")
       end
       it 'userが紐づいていないと登録できない' do
         @record.user = nil
         @record.valid?
-        expect(@record.errors.full_messages).to include("User must exist")
+        expect(@record.errors.full_messages).to include('User must exist')
       end
     end
   end

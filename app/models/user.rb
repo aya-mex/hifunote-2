@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :records
   has_many :comments
-  
+
   validates :nickname, presence: true
   validates :password,
             format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Include both letters and numbers' }
