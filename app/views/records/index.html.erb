@@ -2,12 +2,49 @@
   <div class="inner">
     <% if user_signed_in? %>
       <div class="greeting">
-        こんにちは、<a href="/users/<%= current_user.id %>" class="greeting__link"><%= current_user.nickname %>さん
+        こんにちは、<a href="/users/<%= current_user.id %>" class="greeting__link"><%= current_user.nickname %>さん</a>
       </div>
     <% end %>
-  </div>
-  <div class="card__wrapper">
-    <%= render partial: "record", collection: @records %>
+    <%# HifuNoteとは %>
+    <div class='feature-contents'>
+      <h2 class='title'>
+        皮膚症状記録アプリ -HifuNote-
+      </h2>
+      <ul class='feature-lists'>
+        <li class='list'>
+          <%= image_tag "hifunote-intro01.png", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            症状が出たらすぐに記録できる！
+          </h3>
+          <p class='feature-list-description'>
+            スマホで写真を撮って、発症日時や症状と一緒に記録することができます
+          </p>
+        </li>
+        <li class='list'>
+          <%= image_tag "hifunote-intro02.png", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            病院で記録を見ながら説明できる！
+          </h3>
+          <p class='feature-list-description'>
+            写真を見せたり、記録した情報を見ながらきちんと症状を説明することできます
+          </p>
+        </li>
+        <li class='list'>
+          <%= image_tag "hifunote-intro03.png", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            他のユーザーと記録を共有できる！
+          </h3>
+          <p class='feature-list-description'>
+            部位、症状ごとの一覧記録から似たような症状を見つけることができます
+          </p>
+        </li>
+      </ul>
+    </div>
+    <%# /HifuNoteとは %>
+
+    <div class="card__wrapper">
+      <%= render partial: "record", collection: @records %>
+    </div>
   </div>
 </main>
 
