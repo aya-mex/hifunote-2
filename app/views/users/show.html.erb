@@ -1,19 +1,27 @@
-<div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <% @records.each do |record| %>
-    <li class='list'>
-      <div class='record-img-content'>
-        <%= link_to image_tag(record.images[0], class: "record-img"), record_path(record.id) %>
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= @nickname %>さんの投稿一覧
+      </h2>
+      <div class="user__card">
+        <% @records.each do |record| %>
+          <li class='list'>
+            <div class='record-img-content'>
+              <%= link_to image_tag(record.images[0], class: "record-img"), record_path(record.id) %>
+            </div>
+            <div class='record-info'>
+              <p>発症部位： <%= record.bodypart %></p>
+              <p>症状： <%= record.symptom %></p>
+            </div>
+            <div>
+              <a href="/users/<%= record.user.id %>">
+                <span>by </span><%= record.user.nickname %>
+              </a>
+            </div>
+          </li>
+        <% end %>
       </div>
-      <div class='record-info'>
-        <p>発症部位： <%= record.bodypart %></p>
-        <p>症状： <%= record.symptom %></p>
-      </div>
-      <div>
-        <a href="/users/<%= record.user.id %>">
-          <span>by </span><%= record.user.nickname %>
-        </a>
-      </div>
-    </li>
-  <% end %>
+    </div>
+  </div>
 </div>
