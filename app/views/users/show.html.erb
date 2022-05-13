@@ -6,20 +6,14 @@
       </h2>
       <div class="user__card">
         <% @records.each do |record| %>
-          <li class='list'>
-            <div class='record-img-content'>
-              <%= link_to image_tag(record.images[0], class: "record-img"), record_path(record.id) %>
+          <div class="card">
+            <%= link_to image_tag(record.images[0], class: :card__img), record_path(record.id) %>
+            <div class="card__body">
+              <p class="card__summary">
+                <%= record.bodypart %>
+              </p>
             </div>
-            <div class='record-info'>
-              <p>発症部位： <%= record.bodypart %></p>
-              <p>症状： <%= record.symptom %></p>
-            </div>
-            <div>
-              <a href="/users/<%= record.user.id %>">
-                <span>by </span><%= record.user.nickname %>
-              </a>
-            </div>
-          </li>
+          </div>
         <% end %>
       </div>
     </div>
