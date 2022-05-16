@@ -88,14 +88,14 @@
         <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
       <ul class="comments_lists">
-        <li class="comments_list">
-          <% @comments.each do |comment| %>
+        <% @comments.each do |comment| %>
+          <li class="comments_list">
             <p>
               <%= comment.text %>
               <%= link_to "（#{comment.user.nickname}）", "/users/#{comment.user_id}", class: :comment_user %>
             </p>
-          <% end %>
-        </li>
+          </li>
+        <% end %>
       </ul>
     </div>
     <%# /コメント欄 %>
