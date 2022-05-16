@@ -77,7 +77,7 @@
       <% if user_signed_in? %>
         <%= form_with(model: [@record, @comment], local: true) do |form| %>
           <div class="field">
-            <%= form.label :content, "コメント" %><br />
+            <%= form.label :text, "コメント" %><br />
             <%= form.text_area :text, class: :comment_content %>
           </div>
           <div class="actions">
