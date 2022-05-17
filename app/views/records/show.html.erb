@@ -92,7 +92,8 @@
           <li class="comments_list">
             <p>
               <%= comment.text %>
-              <%= link_to "（#{comment.user.nickname}）", "/users/#{comment.user_id}", class: :comment_user %>
+              <%= link_to "[#{comment.user.nickname}]", "/users/#{comment.user_id}", class: :comment_user %>
+              <%= l comment.created_at %>
               <% if current_user.id == comment.user_id %>
                 <%= link_to "削除", record_comment_path(comment.id), method: :delete, class: :comment_btn %>
               <% end %>
