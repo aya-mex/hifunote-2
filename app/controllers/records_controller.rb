@@ -43,10 +43,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  def search
-    @records = Record.search(params[:keyword])
-  end
-
   private
 
   def record_params

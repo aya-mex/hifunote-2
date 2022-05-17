@@ -8,12 +8,4 @@ class Record < ApplicationRecord
   validates :onset_time, presence: true,
                          numericality: { only_integer: true, message: 'is invalid. Input half-width characters' },
                          inclusion: { in: 0..23, message: 'is out of setting range' }
-
-  def self.search(search)
-    if search != ""
-      Record.where('text LIKE(?)', "%#{search}%")
-    else
-      Record.all
-    end
-  end
 end
