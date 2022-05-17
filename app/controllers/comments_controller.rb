@@ -4,6 +4,14 @@ class CommentsController < ApplicationController
     redirect_to "/records/#{comment.record.id}"
   end
 
+  def destroy
+    @record = Record.find(params[:id])
+    @comment = Comment.find(params[:record_id])
+    if @comment.destroy
+      redirect_to record_path(@record.id)
+    end
+  end
+
   private
 
   def comment_params
