@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        検索結果一覧
+      </h2>
+      <div class="user__card">
+        <% @records.each do |tweet| %>
+          <%= render partial: "record", collection: @records %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
