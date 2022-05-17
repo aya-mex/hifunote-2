@@ -50,8 +50,42 @@ a {
   align-items: center;
 }
 
+.search-bar-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
   width: 300px;
+}
+
+.search-form {
+  width: 40vw;
+  height: 5vh;
+  display: flex;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 5vh;
+  padding-left: 10px;
+}
+
+.search-button {
+  width: 5vh;
+  height: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #999;
+  padding: 8px;
+}
+
+.search-icon {
+  width: 100%;
+  padding-bottom: 80px;
 }
 
 .nav__btn{
