@@ -14,8 +14,12 @@
     <header class="header">
       <div class="inner">
         <div class="nav">
-          <div class="nav__left">
+          <div class='search-bar-contents'>
             <%= link_to image_tag("hifunote_logo_grey.png", class: :logo), root_path %>
+            <%= form_with(url: search_records_path, local: true, method: :get, class: "search-form") do |form| %>
+              <%= form.text_field :keyword, placeholder: 'キーワードから探す', class: 'input-box' %>
+              <%= form.submit "検索", class: "search-btn" %>
+            <% end %>
           </div>
             <% if user_signed_in? %>
               <div class="nav__right">
