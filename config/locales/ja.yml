@@ -2,3 +2,20 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      record:
+        images: 画像
+        onset_date: 発症日
+        onset_time: 発症した時刻
+        bodypart: 発症した部位
+        symptom: 症状
+        visit_date: 病院へ行った日
+        hospital_name: 病院名
+        diagnosis: 診断された病名
+        cause: 診断された原因
+        prescription_drug: 処方された薬
+        remission_date: 寛解日
+        memo: メモ

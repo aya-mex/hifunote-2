@@ -4,10 +4,10 @@ class Record < ApplicationRecord
   has_many :comments
 
   validates :images, :onset_date, :bodypart, :symptom, presence: true
-  validates :images, length: { minimum: 1, maximum: 3 }
+  validates :images, length: { minimum: 1, maximum: 3, message: 'は1枚以上3枚以下にしてください' }
   validates :onset_time, presence: true,
-                         numericality: { only_integer: true, message: 'is invalid. Input half-width characters' },
-                         inclusion: { in: 0..23, message: 'is out of setting range' }
+                         numericality: { only_integer: true, message: 'は半角数字で入力してください' },
+                         inclusion: { in: 0..23, message: 'は0〜23で入力してください' }
 
   def self.search(search)
     if search != ""
