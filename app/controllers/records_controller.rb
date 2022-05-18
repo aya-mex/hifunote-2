@@ -3,7 +3,7 @@ class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   def index
-    @records = Record.includes(:user).order('created_at DESC')
+    @records = Record.includes(:user).order('created_at DESC').limit(3)
   end
 
   def new
