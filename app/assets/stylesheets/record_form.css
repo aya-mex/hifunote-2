@@ -7,6 +7,14 @@
   width: 50%;
 }
 
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
 .field{
   margin: 10px 0;
 }
