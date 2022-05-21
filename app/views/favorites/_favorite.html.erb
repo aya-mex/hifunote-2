@@ -1,0 +1,11 @@
+<% if !Favorite.exists?(user_id: current_user.id, record_id: @record.id) %>
+  <%= link_to record_favorites_path(@record.id), method: :post, remote: true, class:"like-btn" do %>
+    <span class="record__btn">保存</span>
+  <% end %>
+  <span class="star-count1"><%= @record.favorites.count %></span>
+<% else %>
+  <%= link_to record_favorite_path(@record.id, id: @record.favorites[0].id), method: :delete, remote: true, class:"like-btn" do %>
+    <span class="record__btn">保存</span>
+  <% end %>
+  <span class="star-count2"><%= @record.favorites.count %></span>
+<% end %>

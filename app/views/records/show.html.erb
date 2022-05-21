@@ -17,7 +17,7 @@
     <% end %>
 
     <% if user_signed_in? && current_user.id != @record.user_id %>
-      <%= link_to "保存する", "#", class: :record__btn %>
+      <%= render partial: "favorites/favorite" %>
     <% end %>
 
     <table class="detail-table">
