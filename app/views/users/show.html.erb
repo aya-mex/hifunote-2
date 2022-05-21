@@ -17,5 +17,23 @@
         <% end %>
       </div>
     </div>
+    <div class="user__wrapper">
+    <%= if @favorite_list.present? %>
+      <h2 class="page-heading">
+        <%= @nickname %>さんの保存一覧
+      </h2>
+      <div class="user__card">
+        <% @favorite_list.each do |record| %>
+          <div class="card">
+            <%= link_to image_tag(record.images[0], class: :card__img), record_path(record.id) %>
+            <div class="card__body">
+              <p class="card__summary">
+                <%= link_to "by #{record.user.nickname}", user_path(record.user_id), class: :card__user %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

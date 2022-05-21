@@ -1,0 +1,11 @@
+#favorite{ id: @record.id }
+  - if !Favorite.exists?(user: current_user, record_id: @record.id)
+    = link_to record_favorites_path(@record), method: :post, remote: true, class: "favorite-btn favorite-post" do
+      .i.far.fa-thumbs-up
+        %span いいね！
+        = @record.favorites.length
+  - else
+    = link_to record_favorites_path(@record), method: :delete, remote: true, class: "favorite-btn favorite-delete" do
+      .i.far.fa-thumbs-up
+        %span いいね！
+        = @record.favorites.length
