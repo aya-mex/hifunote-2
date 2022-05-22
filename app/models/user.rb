@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :records
-  has_many :comments
+  has_many :records, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   validates :nickname, presence: true
   validates :password, length: { minimum: 8, message: 'は6文字以上で入力してください' },

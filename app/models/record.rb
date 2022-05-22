@@ -1,7 +1,8 @@
 class Record < ApplicationRecord
   belongs_to :user
   has_many_attached :images
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   validates :images, :onset_date, :bodypart, :symptom, presence: true
   validates :images, length: { minimum: 1, maximum: 3, message: 'は1枚以上3枚以下にしてください' }
@@ -16,4 +17,8 @@ class Record < ApplicationRecord
       Record.all
     end
   end
+
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+ end
 end
