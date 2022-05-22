@@ -17,7 +17,15 @@
     <% end %>
 
     <% if user_signed_in? && current_user.id != @record.user_id %>
-      <%= render partial: "favorites/favorite" %>
+      <% if @record.favorited?(current_user) %>
+        <%= link_to record_favorite_path(@record.id), method: :delete do %>
+        <span class="record__btn favorite">保存済</span>
+        <% end %>
+      <% else %>
+        <%= link_to record_favorites_path(@record.id), method: :post do %>
+        <span class="record__btn">保存</span>
+        <% end %>
+      <% end %>
     <% end %>
 
     <table class="detail-table">

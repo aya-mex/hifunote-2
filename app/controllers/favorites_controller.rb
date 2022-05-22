@@ -1,21 +1,15 @@
 class FavoritesController < ApplicationController
-  before_action :set_record
   before_action :authenticate_user!
 
   def create
-    if @record.user_id != current_user.id
-      @favorite = Favorite.create(user_id: current_user.id, record_id: @record.id)
-    end
+    @record_favorite = Favorite.new(user_id: current_user.id, record_id: params[:record_id])
+    @record_favorite.save
+    redirect_to record_path(params[:record_id]) 
   end
   
   def destroy
-    @favorite = Favorite.find_by(user_id: current_user.id, record_id: @record.id)
-    @favorite.destroy
-  end
-
-  private
-  
-  def set_record
-    @record = Record.find(params[:record_id])
+    @record_favorite = Favorite.find_by(user_id: current_user.id, record_id: params[:record_id])
+    @record_favorite.destroy
+    redirect_to record_path(params[:record_id]) 
   end
 end
