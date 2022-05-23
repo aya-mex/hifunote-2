@@ -57,7 +57,7 @@ https://hifunote-2.herokuapp.com/
 
 # データベース設計
 
-[![Image from Gyazo](https://i.gyazo.com/53eebbfa82dcdbe04209c772ea5edaa7.png)](https://gyazo.com/53eebbfa82dcdbe04209c772ea5edaa7)
+[![Image from Gyazo](https://i.gyazo.com/9413929f146e93cbd98af4ced0b1181b.png)](https://gyazo.com/9413929f146e93cbd98af4ced0b1181b)
 
 # 画面遷移図
 
