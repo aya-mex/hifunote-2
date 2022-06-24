@@ -50,7 +50,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:onset_date, :onset_time, :bodypart, :symptom, :visit_date, :hospital_name, :diagnosis,
+    params.require(:record).permit(:onset_date, :onset_time, :bodypart_id, :symptom_id, :visit_date, :hospital_name, :diagnosis,
                                    :cause, :prescription_drug, :remission_date, :memo, { images: [] }).merge(user_id: current_user.id)
   end
 
