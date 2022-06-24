@@ -3,7 +3,7 @@ class CreateRecords < ActiveRecord::Migration[6.0]
     create_table :records do |t|
       t.date :onset_date,         null: false
       t.integer :onset_time,      null: false
-      t.string :bodypart,         null: false
+      t.integer :bodypart_id,     null: false
       t.string :symptom,          null: false
       t.date :visit_date
       t.string :hospital_name
