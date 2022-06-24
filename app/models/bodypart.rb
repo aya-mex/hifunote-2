@@ -9,9 +9,9 @@ class Genre < ActiveHash::Base
     { id: 7, name: '腕' },
     { id: 8, name: '手' },
     { id: 9, name: '足' },
-    { id: 10, name: '上肢' }
-    { id: 11, name: '下肢' }
-    { id: 12, name: '脇' }
+    { id: 10, name: '上肢' },
+    { id: 11, name: '下肢' },
+    { id: 12, name: '脇' },
     { id: 13, name: 'その他' }
   ]
 
