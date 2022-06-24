@@ -1,5 +1,8 @@
 class Record < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
+  belongs_to :bodypart
+  belongs_to :symptom
   has_many_attached :images
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
