@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2022_05_21_124540) do
     t.date "onset_date", null: false
     t.integer "onset_time", null: false
     t.integer "bodypart_id", null: false
-    t.string "symptom", null: false
+    t.integer "symptom_id", null: false
     t.date "visit_date"
     t.string "hospital_name"
     t.string "diagnosis"
