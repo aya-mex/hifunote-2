@@ -7,7 +7,7 @@ class Record < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  validates :images, :onset_date, :bodypart, :symptom, presence: true
+  validates :images, :onset_date, :bodypart_id, :symptom_id, presence: true
   validates :images, length: { minimum: 1, maximum: 3, message: 'は1枚以上3枚以下にしてください' }
   validates :onset_time, presence: true,
                          numericality: { only_integer: true, message: 'は半角数字で入力してください' },
